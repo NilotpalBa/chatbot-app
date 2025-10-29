@@ -129,7 +129,7 @@ with right_col:
         st.success("System prompt updated.")
     if st.button("Clear chat history"):
         clear_history()
-        st.experimental_rerun()
+        st.rerun()
 
 with left_col:
     st.markdown("<div class='header'><h1 class='title'>🤖 GenAI Chat — Professional UI</h1></div>", unsafe_allow_html=True)
@@ -156,7 +156,7 @@ with left_col:
         # add a placeholder bot message while thinking
         add_message("bot", "...")
         # Update UI first
-        st.experimental_rerun()
+        st.rerun()
 
 # This block runs when placeholder '...' exists as last bot message — handle actual API call outside to avoid nested run
 # Find if there is a bot placeholder to replace
@@ -177,3 +177,4 @@ if st.session_state.history and st.session_state.history[-1][1] == "...":
         st.session_state.history[-1] = ("bot", bot_reply)
 
         st.rerun()
+
