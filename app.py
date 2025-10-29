@@ -175,4 +175,5 @@ if st.session_state.history and st.session_state.history[-1][1] == "...":
                                         model=model_name, temperature=temp, max_tokens=max_tokens)
         # replace last placeholder
         st.session_state.history[-1] = ("bot", bot_reply)
-        st.experimental_rerun()
+
+        st.rerun()
