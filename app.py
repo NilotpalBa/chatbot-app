@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 # Load environment / API key
 # ---------------------------
 load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = os.getenv("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")
 if not OPENAI_API_KEY:
     st.error("Missing OPENAI_API_KEY. Create a .env file with OPENAI_API_KEY=sk-....")
     st.stop()
@@ -177,4 +177,5 @@ if st.session_state.history and st.session_state.history[-1][1] == "...":
         st.session_state.history[-1] = ("bot", bot_reply)
 
         st.rerun()
+
 
